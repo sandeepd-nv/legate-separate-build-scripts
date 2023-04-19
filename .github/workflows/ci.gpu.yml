@@ -24,6 +24,7 @@ jobs:
         VAULT_HOST: https://vault.ops.k8s.rapids.ai
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_DEBUG: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v3
