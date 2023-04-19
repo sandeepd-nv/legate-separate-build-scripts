@@ -5,6 +5,9 @@ set -e;
 cd ~/
 
 # clone-legion;
+export GITHUB_TOKEN=$GITHUB_TOKEN_1
+gh auth login -p https
+
 clone-legate-core;
 clone-cunumeric;
 
