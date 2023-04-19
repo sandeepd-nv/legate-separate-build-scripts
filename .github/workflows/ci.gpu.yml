@@ -32,8 +32,7 @@ jobs:
           DEBIAN_FRONTEND=noninteractive \
           apt install -y --no-install-recommends \
               numactl rlwrap;
-          gh auth login -p https
-          git clone https://github.com/trxcllnt/legate-separate-build-scripts.git /tmp/repo;
+          gh repo clone https://github.com/trxcllnt/legate-separate-build-scripts.git /tmp/repo;
           mv /tmp/repo/home/coder/.gitconfig /home/coder/.gitconfig;
           mv /tmp/repo/home/coder/.local /home/coder/.local;
           chmod a+x /home/coder/.local/bin/*;
