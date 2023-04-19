@@ -21,7 +21,7 @@ jobs:
         SCCACHE_REGION: us-east-2
         SCCACHE_BUCKET: rapids-sccache-devs
         SCCACHE_S3_KEY_PREFIX: legate-cunumeric-dev
-        # VAULT_HOST: https://vault.ops.k8s.rapids.ai
+        VAULT_HOST: https://vault.ops.k8s.rapids.ai
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -44,6 +44,7 @@ jobs:
           JOBS=1                                             \
           CMAKE_BUILD_PARALLEL_LEVEL=1                       \
           PATH=${PATH}                                       \
+          VAULT_HOST=${VAULT_HOST}                           \
           GH_TOKEN=${GITHUB_TOKEN}                           \
           GITHUB_TOKEN=${GITHUB_TOKEN}                       \
           SCCACHE_BUCKET=${SCCACHE_BUCKET}                   \
