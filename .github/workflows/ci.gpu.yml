@@ -22,8 +22,8 @@ jobs:
         SCCACHE_BUCKET: rapids-sccache-devs
         SCCACHE_S3_KEY_PREFIX: legate-cunumeric-dev
         # VAULT_HOST: https://vault.ops.k8s.rapids.ai
-        GH_TOKEN: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
-        GITHUB_TOKEN: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Build
         shell: bash -eo pipefail {0}
