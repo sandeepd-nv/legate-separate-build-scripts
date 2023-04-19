@@ -11,7 +11,7 @@ on:
       - gh-pages  # deployment target branch (this workflow should not exist on that branch anyway)
 jobs:
   build:
-    permissions: read-all|write-all
+    permissions: write-all
     runs-on: ubuntu-latest
     container:
       options: -u root
