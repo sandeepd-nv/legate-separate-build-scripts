@@ -35,6 +35,6 @@ WORKDIR /home/coder
 COPY --chown=coder:coder home/coder/.gitconfig /home/coder/
 COPY --chown=coder:coder home/coder/.local/bin/* /home/coder/.local/bin/
 
-ENTRYPOINT ["/home/coder/.local/bin/entrypoint"]
+# ENTRYPOINT ["/home/coder/.local/bin/entrypoint"]
 
-CMD ["/bin/bash", "-l"]
+# CMD ["/bin/bash", "-l"]
