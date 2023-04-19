@@ -41,8 +41,6 @@ jobs:
           chmod a+x /home/coder/.local/bin/*;
           chown -R coder:coder /home/coder/;
 
-          echo Github user: $(gh api user --jq '.login')
-
           su - coder -Pc "                                   \
           JOBS=1                                             \
           CMAKE_BUILD_PARALLEL_LEVEL=1                       \

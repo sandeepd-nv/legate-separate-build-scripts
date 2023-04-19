@@ -4,6 +4,9 @@ set -e;
 
 cd ~/
 
+vault-auth-github;
+echo AUTH DONE!
+
 # clone-legion;
 clone-legate-core;
 clone-cunumeric;
