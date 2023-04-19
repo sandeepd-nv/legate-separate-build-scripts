@@ -25,6 +25,9 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Build
         shell: bash -eo pipefail {0}
         run: |
@@ -32,16 +35,10 @@ jobs:
           DEBIAN_FRONTEND=noninteractive \
           apt install -y --no-install-recommends \
               numactl rlwrap;
-          echo HERE-1
-          gh auth login -p https
-          echo HERE-2
-          gh repo clone https://github.com/trxcllnt/legate-separate-build-scripts.git /tmp/repo;
-          echo HERE-3
-          mv /tmp/repo/home/coder/.gitconfig /home/coder/.gitconfig;
-          mv /tmp/repo/home/coder/.local /home/coder/.local;
+          mv home/coder/.gitconfig /home/coder/.gitconfig;
+          mv home/coder/.local /home/coder/.local;
           chmod a+x /home/coder/.local/bin/*;
           chown -R coder:coder /home/coder/;
-          rm -rf /tmp/repo;
 
           su - coder -Pc "                                   \
           JOBS=1                                             \
