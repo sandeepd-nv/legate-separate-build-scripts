@@ -4,10 +4,6 @@ set -e;
 
 cd ~/;
 
-# clone-legion;
-clone-legate-core;
-clone-cunumeric;
-
 if type conda >/dev/null 2>&1; then
     . make-conda-env;
 fi
